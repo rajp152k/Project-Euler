@@ -40,7 +40,7 @@
     (primary-iter 0 primary-source)))
 
 
-(let [(3-digit-nums (n-digit-nums 1))]
+(let [(3-digit-nums (n-digit-nums 3))]
   (max-palindrome-prod 3-digit-nums 3-digit-nums))
 ;906609
 
