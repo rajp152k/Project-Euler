@@ -7,6 +7,7 @@
 (provide stream-splice)
 (provide palindrome?)
 
+
 (define divides?
   (λ (a b)
     "returns whether a divides b"
@@ -23,14 +24,12 @@
 (define sieve
   (λ (seq)
     (stream-cons (stream-first seq)
-                 (stream-filter (λ (x)
+                 (sieve (stream-filter (λ (x)
                                   (not (divides? (stream-first seq) x)))
-                                (stream-rest seq)))))
+                                (stream-rest seq)) ))))
 
 (define primes
-  (begin
-    "returns a stream of primes"
-    (sieve (integers-from 2))))
+    (sieve (integers-from 2)))
 
 
 (define predicate-stepper-stream
